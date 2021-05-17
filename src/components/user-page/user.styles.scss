@@ -1,0 +1,53 @@
+.userpage {
+  &__container {
+    width: 30%;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      cursor: pointer;
+      &:hover {
+        color: #0645AD ;
+      }
+    }
+    .view_change {
+      display: flex;
+      p {
+        margin-left: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 5px 8px;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+          color: #0645AD ;
+        }
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    row-gap: 15px;
+    border-spacing: 0 1em;
+    border-collapse: collapse;
+    border-radius: 10px;
+
+    th {
+      vertical-align: top;
+      text-align: left;
+      top: 0px;
+      height: 100%;
+      background: white;
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: 10px 5px 10px 10px;
+      line-height: 1.5;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}

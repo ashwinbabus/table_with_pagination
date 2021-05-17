@@ -1,0 +1,76 @@
+.main__table {
+  width: 100%;
+
+  table {
+    width: 100%;
+    row-gap: 15px;
+    border-spacing: 0 1em;
+    border-collapse: collapse;
+    border-radius: 10px;
+
+    .head__row {
+      th {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .user__info {
+      cursor: pointer;
+      &:hover{
+        background-color: rgb(210, 223, 226);
+      }
+      &:nth-child(even) {
+        background-color: #fafafa;
+        &:hover{
+          background-color: rgb(210, 223, 226);
+        }
+      }
+    }
+  }
+
+  th {
+    vertical-align: top;
+    text-align: left;
+    top: 0px;
+    height: 100%;
+    background: white;
+  }
+
+  th,
+  td {
+    vertical-align: top;
+    padding: 10px 5px 10px 10px;
+    line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .actions {
+    width: 25px;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+      margin: 5px;
+    }
+  }
+
+  .row__number {
+    display: flex;
+    align-items: center;
+
+    select {
+      height: 33px;
+      width: 60px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      outline: rgba(0, 0, 0, 0.8);
+      padding: 0px 5px;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      margin: 10px;
+    }
+  }
+}

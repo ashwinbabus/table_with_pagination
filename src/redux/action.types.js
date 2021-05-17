@@ -1,0 +1,9 @@
+const Actions = {
+    FETCH_DATA_START : "FETCH_DATA_START",
+    FETCH_DATA_SUCCESS : "FETCH_DATA_SUCCESS",
+    FETCH_DATA_FAILURE : "FETCH_DATA_FAILURE",
+
+    DELETE_ROW : "DELETE_ROW"
+}
+
+export default Actions;

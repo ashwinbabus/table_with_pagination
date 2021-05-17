@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import Container from "./components/container/container.component";
+import { Route, Switch } from "react-router-dom";
+import UserPage from "./components/user-page/user.component";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchDataStart, fetchDataSuccess } from "./redux/actions";
+
+function App({ fetchUsers, fetchUserSuccess }) {
+  useEffect(() => {
+    let users = localStorage.getItem("users");
+    if (users) fetchUserSuccess(JSON.parse(users));
+    else fetchUsers();
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Container} />
+        <Route exact path="/:id" component={UserPage} />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  fetchUsers: () => dispatch(fetchDataStart()),
+  fetchUserSuccess: (users) => dispatch(fetchDataSuccess(users)),
+});
+
+export default connect(null, mapDispatchToProps)(App);
