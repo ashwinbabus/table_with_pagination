@@ -55,7 +55,7 @@ function Table({ users, loading }) {
 
           <tbody>
             {new_users.map(user => (
-              <tr key={user.id} className="user__info" onClick={() => history.push(`/${user.id}`)} >
+              <tr key={user.id} className="user__info" >
                 <td>{user.id}</td>
                 <td>{user.email}</td>
                 <td>{user.name}</td>
