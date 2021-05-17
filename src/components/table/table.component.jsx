@@ -4,8 +4,8 @@ import { createStructuredSelector } from "reselect";
 import { selectLoading, selectUsers } from "../../redux/selectors";
 import Pagination from "../pagination/pagination.component";
 import "./table.styles.scss";
-import deleteIcon from '../../delete.png';
-import openIcon from "../../open.png";
+import deleteIcon from '../../assets/delete.png';
+import openIcon from "../../assets/open.png";
 import { useHistory } from "react-router";
 import Actions from "../../redux/action.types";
 

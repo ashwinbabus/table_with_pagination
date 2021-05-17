@@ -6,6 +6,8 @@ import UserPage from "./components/user-page/user.component";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchDataStart, fetchDataSuccess } from "./redux/actions";
+import "./components/page-not-found/pnf.page";
+import PNF from "./components/page-not-found/pnf.page";
 
 function App({ fetchUsers, fetchUserSuccess }) {
   useEffect(() => {
@@ -18,6 +20,7 @@ function App({ fetchUsers, fetchUserSuccess }) {
       <Switch>
         <Route exact path="/" component={Container} />
         <Route exact path="/:id" component={UserPage} />
+        <Route> <PNF /> </Route>
       </Switch>
     </div>
   );
